@@ -14,7 +14,7 @@ var viewports = require('./viewports.js');
                 height: 1024,
             }
         })
-        await page.goto('https://www.thenextmakeupartist.com/en/profile/bylishaa');
+        await page.goto('https://www.google.de');
         await page.screenshot({
             path: './example-' + Date.now() + '.png'
         });

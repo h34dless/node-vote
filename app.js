@@ -11,9 +11,10 @@ var fs = require('fs');
 var ualist = fs.readFileSync('ualist.txt').toString().split("\n");
 
 
-var copylist = shuffle(JSON.parse(JSON.stringify(proxylist)).list);
+var copylist = shuffle(proxylist);
 
 function shuffle(a) {
+    a = JSON.parse(JSON.stringify(a)).list;
     var j, x, i;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);
@@ -33,14 +34,14 @@ function sendRequests(list){
             'url':'https://www.canon-summertour.de/api/v1/participations/vote/142',
             headers: {
                 "User-Agent": getRandomUA(),
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
-                "Accept-Encoding": "gzip, deflate, br"
-                "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
-                "Cache-Control": "max-age=0"
-                "Connection": "keep-alive"
-                "Cookie": "XSRF-TOKEN=eyJpdiI6IlwvbWpQVWc3S3dRQytvMVFJdFpvZElBPT0iLCJ2YWx1ZSI6IkR2blk2N21sRFdubzV6ZTNFWml1c3dEc1RRZHpObzNuTTA3ZzRsV2F2UXpXRGtNaGhoMHpWd3p6bElhMzhsSllJWEJQVm1JalBkS2dXcm10bm5RbVJRPT0iLCJtYWMiOiIxYzk4NjFmY2EyNmYxZjNmM2QzMWI3YWI0YjYzYzNkNjljODY5MWZjMDRlZTFjODE4OGRlOGFhZTViYTBmMDgxIn0%3D; the_next_make_up_artist_session=eyJpdiI6IjU2eHZhSDdYa3JFUEE0S1hLQTZIQkE9PSIsInZhbHVlIjoiZEpaY1pMQUd5Q29nSFdCRzczTktzYnlKOHNcL3ZRbyt0S0lZY05KakJcL2RwbXIyTDRJYUdrWHdsdmszQkg2dWxyKzRINXNiZWE0UENPdXl4NWZEMEpuZz09IiwibWFjIjoiOWFmNjg1MmM4YmRmY2M1ZWNkNTFjMDg4YjBiYjFiZjQxZjViZGQ1MWNjYTAzMmRmNmFlMWViN2Y3OTcwZTQ5MyJ9"
-                "DNT": 1
-                "Host": "www.thenextmakeupartist.com"
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+                "Cache-Control": "max-age=0",
+                "Connection": "keep-alive",
+                "Cookie": "XSRF-TOKEN=eyJpdiI6IlwvbWpQVWc3S3dRQytvMVFJdFpvZElBPT0iLCJ2YWx1ZSI6IkR2blk2N21sRFdubzV6ZTNFWml1c3dEc1RRZHpObzNuTTA3ZzRsV2F2UXpXRGtNaGhoMHpWd3p6bElhMzhsSllJWEJQVm1JalBkS2dXcm10bm5RbVJRPT0iLCJtYWMiOiIxYzk4NjFmY2EyNmYxZjNmM2QzMWI3YWI0YjYzYzNkNjljODY5MWZjMDRlZTFjODE4OGRlOGFhZTViYTBmMDgxIn0%3D; the_next_make_up_artist_session=eyJpdiI6IjU2eHZhSDdYa3JFUEE0S1hLQTZIQkE9PSIsInZhbHVlIjoiZEpaY1pMQUd5Q29nSFdCRzczTktzYnlKOHNcL3ZRbyt0S0lZY05KakJcL2RwbXIyTDRJYUdrWHdsdmszQkg2dWxyKzRINXNiZWE0UENPdXl4NWZEMEpuZz09IiwibWFjIjoiOWFmNjg1MmM4YmRmY2M1ZWNkNTFjMDg4YjBiYjFiZjQxZjViZGQ1MWNjYTAzMmRmNmFlMWViN2Y3OTcwZTQ5MyJ9",
+                "DNT": 1,
+                "Host": "www.thenextmakeupartist.com",
                 "Upgrade-Insecure-Requests": 1
             },
             //'proxy':'http://yourproxy:8087'
@@ -59,7 +60,7 @@ function sendRequests(list){
                 sendRequests(list);
             else {
                 console.log("start anew..");
-                var copylist = shuffle(JSON.parse(JSON.stringify(proxylist)).list);
+                var copylist = shuffle(proxylist);
                 sendRequests(copylist);
             }
         });

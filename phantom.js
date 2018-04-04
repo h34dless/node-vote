@@ -27,7 +27,7 @@ var viewports = require('./viewports.js');
         await timeout(1000);
 
         await page.screenshot({
-            path: './example_clicked-' + Date.now() + '.png'
+            path: './screens/example_clicked-' + Date.now() + '.png'
         });
 
 

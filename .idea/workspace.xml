@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60ce3425-6dcc-41bb-b46c-191a416c7643" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/list_new.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/phantom.js" afterPath="$PROJECT_DIR$/phantom.js" />
-    </list>
+    <list default="true" id="60ce3425-6dcc-41bb-b46c-191a416c7643" name="Default" comment="" />
     <ignored path="votebot.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -292,12 +287,12 @@
       <option name="presentableId" value="Default" />
       <updated>1472335983070</updated>
       <workItem from="1522863062521" duration="6399000" />
-      <workItem from="1522911472722" duration="2069000" />
+      <workItem from="1522911472722" duration="2613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8468000" />
+    <option name="totallyTimeSpent" value="9012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="90" width="1680" height="1031" extended-state="6" />
